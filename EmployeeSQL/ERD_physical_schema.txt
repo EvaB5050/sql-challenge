@@ -1,0 +1,36 @@
+ERD Physical Schema
+
+Titles
+-
+title_id VARCHAR(10) PK
+title VARCHAR
+
+Employees
+-
+emp_no INTEGER PK FK - Dept_Manager.emp_no
+emp_title_id VARCHAR(10) FK >- Titles.title_id
+birth_date VARCHAR(15)
+first_name VARCHAR(50)
+last_name VARCHAR(50)
+sex VARCHAR(5)
+hire_date VARCHAR(15)
+
+Dept_Manager
+-
+dept_no VARCHAR(10) FK >- Departments.dept_no
+emp_no INTEGER 
+
+Dept_Emp
+-
+emp_no INTEGER  FK >- Employees.emp_no
+dept_no VARCHAR(10) FK >- Departments.dept_no
+
+Salaries
+-
+emp_no INTEGER FK - Employees.emp_no
+salary INTEGER
+
+Departments
+-
+dept_no VARCHAR(10) PK
+dept_name VARCHAR(50)
